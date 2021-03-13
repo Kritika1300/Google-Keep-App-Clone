@@ -10,24 +10,30 @@ const App = () => {
     setAddItem((prevData) =>{
         return [...prevData,note];
     });
-    
-  };
+  }
+  const onDelete = (id) =>{
+    setAddItem((oldData) => {
+        oldData.filter((currdata,indx) =>{
+              return indx!== id;  });
+    });
+  }
   return (
   <>
-  <Header/>
-  <CreateNote
-    passNote = {addNote}
-  />
-  {addItem.map((val,index) => {
+    <Header/>
+    <CreateNote passNote = {addNote} />
+   {addItem.map((val,index) => {
     return (
-    <Note key = {index} 
+    <Note 
+    key = {index} 
     id = {index} 
     title = {val.title} 
-    content = {val.content} />
+    content = {val.content}
+    deleteItem = {onDelete} 
+    />
     );
    })}
   <Footer/>
   </>
   );
-}
+};
 export default App;
