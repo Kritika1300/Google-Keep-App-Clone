@@ -10,17 +10,17 @@ const App = () => {
     setAddItem((prevData) =>{
         return [...prevData,note];
     });
-  }
+  } 
   const onDelete = (id) =>{
-    setAddItem((oldData) => {
-        oldData.filter((currdata,indx) =>{
-              return indx!== id;  });
-    });
+    setAddItem((oldData) => (
+        oldData.filter((currdata ,indx) => indx !== id ))
+    );
   }
   return (
-  <>
+  <div className="app">
     <Header/>
     <CreateNote passNote = {addNote} />
+    <div className="notes">
    {addItem.map((val,index) => {
     return (
     <Note 
@@ -32,8 +32,9 @@ const App = () => {
     />
     );
    })}
+   </div>
   <Footer/>
-  </>
+  </div>
   );
-};
+}
 export default App;

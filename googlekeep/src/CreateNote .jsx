@@ -6,8 +6,8 @@ import { useState } from 'react';
 const CreateNote = (props) => {
   const [expand,setExpand] = useState(false);
   const [note,setNote] = useState({
-        title: " ",
-        content: " ",
+        title: "",
+        content: "",
  });
   const InputEvent = (event) => {
       const {name,value} = event.target;
@@ -21,8 +21,8 @@ const CreateNote = (props) => {
   const addEvent = () => {
     props.passNote(note);
     setNote({
-        title: " ",
-        content: " ",
+        title: "",
+        content: "",
  });
   };
   const expandIt = () =>{
@@ -52,7 +52,7 @@ const CreateNote = (props) => {
           onClick = {expandIt}
           ></textarea>
           {expand?
-          <Button onClick = {addEvent}>
+          <Button className="add_button" onClick = {addEvent}>
             <AddIcon className = "plus_sign" />
           </Button>: null}
       </form>
