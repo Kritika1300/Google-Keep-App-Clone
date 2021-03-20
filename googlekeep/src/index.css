@@ -59,6 +59,10 @@ body {
   width: 80vw;
   margin: auto;
   height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 input{
   width: 100%;
@@ -136,4 +140,10 @@ textarea{
   width: 240px;
   margin:16px;
   float: left;
+}
+footer{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
 }
